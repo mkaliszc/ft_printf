@@ -6,7 +6,7 @@
 /*   By: mkaliszc <mkaliszc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:41:58 by mkaliszc          #+#    #+#             */
-/*   Updated: 2024/10/27 04:14:27 by mkaliszc         ###   ########.fr       */
+/*   Updated: 2024/10/27 21:23:09 by mkaliszc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ int	ft_printf(const char *str, ...)
 		else if (str[i] == '%' && str[i + 1] == 'u')
 		{
 			return_value += ft_putint_unsigned(va_arg(arg, unsigned int));
-			i++;
-		}
-		else if (str[i] == '%' && str[i + 1] == '%')
-		{
-			return_value += ft_putchar_m('%');
 			i++;
 		}
 		else if (str[i] == '%' && str[i + 1] == 'x')
