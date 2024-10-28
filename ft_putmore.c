@@ -6,7 +6,7 @@
 /*   By: mkaliszc <mkaliszc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 02:46:07 by mkaliszc          #+#    #+#             */
-/*   Updated: 2024/10/27 04:07:25 by mkaliszc         ###   ########.fr       */
+/*   Updated: 2024/10/28 01:59:45 by mkaliszc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,29 @@ int	ft_toupper(int c)
 
 int	ft_puthexa(unsigned long nb, int n)
 {
-	if (nb >= 16)
-		n += (ft_puthexa(nb / 16, n));
-	n += ft_putchar_m(hex[nb % 16]);
+	if (nb > 15)
+		n += ft_puthexa(nb / 16, n);
+	n += ft_putchar_m(HEX[nb % 16]);
 	return (n);
 }
 
-int	ft_putHEXA(unsigned long nb, int n)
+int	ft_puthexa_upper(unsigned long nb, int n)
 {
-	if (nb >= 16)
-		n += (ft_puthexa(nb / 16, n));
-	n += ft_putchar_m(ft_toupper(hex[nb % 16]));
+	if (nb > 15)
+		n += ft_puthexa(nb / 16, n);
+	n += ft_putchar_m(ft_toupper(HEX[nb % 16]));
 	return (n);
 }
 
 int	ft_putint_unsigned(int nbr)
 {
-	int			i;
-	unsigned	nb;
+	int				i;
+	unsigned int	nb;
 
 	i = 0;
 	nb = (unsigned)nbr;
 	if (nb > 9)
 		i += ft_putint(nb / 10);
 	i += ft_putchar_m((nb % 10) + '0');
-	return(i);
+	return (i);
 }

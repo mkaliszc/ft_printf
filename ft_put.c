@@ -6,7 +6,7 @@
 /*   By: mkaliszc <mkaliszc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 00:05:29 by mkaliszc          #+#    #+#             */
-/*   Updated: 2024/10/27 03:32:19 by mkaliszc         ###   ########.fr       */
+/*   Updated: 2024/10/28 01:56:48 by mkaliszc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ int	ft_putstr_m(char *str)
 	return (i);
 }
 
-
-int ft_putptr(void *ptr)
+int	ft_putptr(void *ptr)
 {
 	int				count;
 	unsigned long	nb;
 
 	nb = (unsigned long)ptr;
 	if (!ptr)
-		return(ft_putstr_m("(nil)"));
+		return (ft_putstr_m("(nil)"));
 	count = ft_putstr_m("0x");
 	return (ft_puthexa(nb, count));
 }
@@ -56,5 +55,5 @@ int	ft_putint(int nbr)
 	if (nb > 9)
 		i += ft_putint(nb / 10);
 	i += ft_putchar_m((nb % 10) + '0');
-	return(i);
+	return (i);
 }
