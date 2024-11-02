@@ -6,7 +6,7 @@
 /*   By: mkaliszc <mkaliszc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 00:05:29 by mkaliszc          #+#    #+#             */
-/*   Updated: 2024/10/28 01:56:48 by mkaliszc         ###   ########.fr       */
+/*   Updated: 2024/11/02 19:08:41 by mkaliszc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_putstr_m(char *str)
 	int	i;
 
 	i = 0;
+	if (str == NULL)
+		return (ft_putstr_m("(null)"));
 	while (str[i] != '\0')
 		i += ft_putchar_m(str[i]);
 	return (i);

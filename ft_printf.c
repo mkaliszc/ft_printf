@@ -6,7 +6,7 @@
 /*   By: mkaliszc <mkaliszc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:41:58 by mkaliszc          #+#    #+#             */
-/*   Updated: 2024/10/28 01:54:07 by mkaliszc         ###   ########.fr       */
+/*   Updated: 2024/11/02 19:31:04 by mkaliszc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int	ft_handle_format(va_list arg, const char str)
 
 	count = 0;
 	if (str == 'c')
-		count += ft_putchar_m(va_arg(arg, int));
+		count = ft_putchar_m(va_arg(arg, int));
 	else if (str == 's')
-		count += ft_putstr_m(va_arg(arg, char *));
+		count = ft_putstr_m(va_arg(arg, char *));
 	else if (str == 'p')
-		count += ft_putptr(va_arg(arg, void *));
+		count = ft_putptr(va_arg(arg, void *));
 	else if (str == 'd' || str == 'i')
-		count += ft_putint(va_arg(arg, int));
+		count = ft_putint(va_arg(arg, int));
 	else if (str == 'u')
-		count += ft_putint_unsigned(va_arg(arg, unsigned int));
+		count = ft_putint_unsigned(va_arg(arg, unsigned int));
 	else if (str == 'x')
-		count += ft_puthexa(va_arg(arg, unsigned int), count);
+		count = ft_puthexa(va_arg(arg, unsigned int), count);
 	else if (str == 'X')
 		count = ft_puthexa_upper(va_arg(arg, unsigned int), count);
 	else if (str == '%')
@@ -66,7 +66,10 @@ int	ft_printf(const char *str, ...)
 
 /* int main()
 {
-	printf("%d\n", ft_printf("function 1 : %X ----> ", 15));
-	printf("%d\n", printf("function 2 : %X ----> ", 15));
+	int nb = 41;
+	int	*ptr = &nb;
+	
+	printf("%d\n", ft_printf("%p\n", ptr ));
+	printf("%d\n", printf("%p\n", ptr ));
 	return(0); 
 } */
