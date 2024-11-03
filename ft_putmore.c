@@ -6,19 +6,11 @@
 /*   By: mkaliszc <mkaliszc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 02:46:07 by mkaliszc          #+#    #+#             */
-/*   Updated: 2024/11/02 19:28:23 by mkaliszc         ###   ########.fr       */
+/*   Updated: 2024/11/03 01:22:31 by mkaliszc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_toupper(int c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (c - ('a' - 'A'));
-	else
-		return (c);
-}
 
 int	ft_puthexa(unsigned long nb, int n)
 {
